@@ -6,7 +6,7 @@
 /*   By: sarayapa <sarayapa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 20:32:59 by sarayapa          #+#    #+#             */
-/*   Updated: 2026/03/04 22:44:14 by sarayapa         ###   ########.fr       */
+/*   Updated: 2026/03/04 23:26:04 by sarayapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	key_hook(mlx_key_data_t keydata, void *param)
 	{
 		mlx_terminate(f->mlx);
 		exit(0);
-	}ผ
+	}
 	if (keydata.key == MLX_KEY_LEFT && keydata.action == MLX_PRESS)
 		f->offset_x -= 0.1 * f->scale;
 	if (keydata.key == MLX_KEY_RIGHT && keydata.action == MLX_PRESS)

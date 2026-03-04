@@ -6,7 +6,7 @@
 #    By: sarayapa <sarayapa@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/12 14:02:07 by sarayapa          #+#    #+#              #
-#    Updated: 2026/03/03 22:20:20 by sarayapa         ###   ########.fr        #
+#    Updated: 2026/03/04 22:31:18 by sarayapa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 LIBMLX	:= ./MLX42
 
-FILES = main.c fractol_utils.c
+FILES = main.c fractol_utils.c fractol_hooks.c
 
 SRCS = src/
 BUILD = build/
@@ -57,23 +57,26 @@ $(NAME): $(SRCS_O)
 	@echo "$(GREEN)✔ $(NAME) ready Location: $(BLUE)$$(pwd)/$(YELLOW)$(NAME)$(RESET)"
 
 norm:
-	@echo "========== INCLUDES =========="
+	@echo "========= INCLUDES =========="
 	@norminette ./include
-	@echo "========== SOURCES =========="
+	@echo "========= SOURCES ==========="
 	@norminette $(SRCS)
-	@echo "========== LIBFT =========="
+	@echo "========= LIBFT ============="
 	@norminette ./libft
 
 clean:
-	@echo "$(RED)Cleaning objects...$(RESET)"
 	@make -s clean -C libft
+	@echo "$(RED)Cleaned libft!$(RESET)"
 	@rm -rf $(BUILD)
+	@echo "$(RED)Cleaned objects!$(RESET)"
+	@rm -rf $(LIBMLX)/build
+	@echo "$(RED)Cleaned MLX42/build!$(RESET)"
 
 fclean: clean
-	@echo "$(RED)Removing $(NAME)...$(RESET)"
+	@echo "$(RED)Removed $(NAME)!$(RESET)"
 	@make -s fclean -C libft
 	@rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re libft norm
+.PHONY: all clean fclean re libft norm libmlx

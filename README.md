@@ -1,157 +1,79 @@
 *This project has been created as part of the 42 curriculum by sarayapa.*
 
 # fract-ol
+fract-ol is a program that draws fractals using the MiniLibX graphics library.
 
-------------------------------------------------------------------------
 
 ## Description
 
-Briefly explain:
-- What fract-ol is
-- What a fractal is
-- The main goal of the project
-- What the program does
-- What concepts are involved (MiniLibX, complex numbers, rendering, etc.)
-
-------------------------------------------------------------------------
-
-## Features
-
-List the mandatory features:
+A fractal is a mathematical shape that shows similar patterns when you zoom in.
+In this project we render two famous fractals:
 
 - Mandelbrot set
+
 - Julia set
-- Mouse wheel zoom
-- ESC to exit
-- Clean window closing
-- Multiple color schemes
 
-List bonus features (if implemented):
+Each pixel of the screen represents a point in the complex plane.
+The program runs a mathematical formula many times to check if the point belongs to the fractal, then colors the pixel based on the result.
 
-- Additional fractal
-- Zoom centered on mouse position
-- Arrow key movement
-- Dynamic color shifting
+This project helps practice:
 
-------------------------------------------------------------------------
+- graphics programming
+
+- complex numbers
+
+- rendering algorithms
+
+- event handling with MiniLibX
 
 ## Instructions
 
-Explain:
+This program uses MiniLibX (MLX42) to create a window and draw fractals.
 
-- What library is required (MiniLibX)
-- Supported fractals
-- Command-line arguments format
-- What happens when arguments are invalid
 
-Example structure:
+### Execution
 
-### Available fractals
-
-- mandelbrot
-- julia
-
-### Argument format
-
-    ./fractol <fractal_type> [options]
-
-------------------------------------------------------------------------
-
-## Compilation
-
-Explain how to compile:
-
-    make
-
-Other rules:
-
-    make clean
-    make fclean
-    make re
-
-Mention required flags (-Wall -Wextra -Werror) if desired.
-
-------------------------------------------------------------------------
-
-## Execution
-
-Basic usage examples:
+Run Mandelbrot:
 
     ./fractol mandelbrot
 
+Run Julia:
+
     ./fractol julia <real> <imaginary>
 
-Explain what the program should display.
+Example:
 
-------------------------------------------------------------------------
+    ./fractol julia 0.285 0.01
 
-## Controls
 
-Describe user interaction:
+### Controls
 
-- Mouse wheel → zoom in/out
-- ESC → exit
-- Window close button → exit cleanly
-- (Bonus) Arrow keys → move view
-- (Bonus) Key for color shift
 
-------------------------------------------------------------------------
+| Input               | Action             |
+| ------------------- | ------------------ |
+| Mouse wheel         | Zoom in / Zoom out |
+| Arrow keys          | Move the view      |
+| ESC                 | Exit program       |
+| Window close button | Exit program       |
 
-## Technical Overview
 
-Explain briefly:
-
-- How fractals are computed (escape-time algorithm)
-- How complex numbers are handled
-- Rendering process (pixel by pixel)
-- Event handling with MiniLibX
-- Memory management considerations
-
-------------------------------------------------------------------------
-
-## Project Constraints
-
-Mention:
-
-- Written in C
-- Norm compliant
-- No global variables
-- Uses MiniLibX
-- No memory leaks
-
-------------------------------------------------------------------------
 
 ## Resources
 
 List references such as:
 
-- https://harm-smits.github.io/42docs/libs/minilibx/getting_started.html
-- MiniLibX documentation
-- Mandelbrot set explanation
-- Julia set explanation
-- Complex numbers references
+- https://w.wiki/JAKr
+- https://www.facebook.com/share/p/1DysnSwesi/
+- https://github.com/codam-coding-college/MLX42/tree/master/docs
 
-------------------------------------------------------------------------
 
-## AI Usage
+### AI Usage
 
-Explain:
+AI was used to help understand:
 
-- Whether AI was used
-- For what purpose (concept explanation, documentation, etc.)
-- Confirm full understanding of the implementation
+- Mandelbrot and Julia fractals
 
-------------------------------------------------------------------------
+- how fractal formulas work
 
-## Screenshots (Optional)
+- MLX42 documentation
 
-Add screenshots if desired:
-
-![Mandelbrot](path/to/image.png)
-
-------------------------------------------------------------------------
-
-## Author
-
-Login: sarayapa  
-42 Bangkok

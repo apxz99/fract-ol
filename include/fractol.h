@@ -6,7 +6,7 @@
 /*   By: sarayapa <sarayapa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 14:07:39 by sarayapa          #+#    #+#             */
-/*   Updated: 2026/03/03 22:19:55 by sarayapa         ###   ########.fr       */
+/*   Updated: 2026/03/04 16:00:40 by sarayapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ typedef struct s_fractol
 
 	t_type	type;
 	int		max_iter;
-}   t_fractal;
+}   t_fractol;
 
-void parse_args(int ac, char **av, t_fractal *f);
+void parse_args(int ac, char **av, t_fractol *f);
 
 #endif

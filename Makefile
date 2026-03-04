@@ -6,7 +6,7 @@
 #    By: sarayapa <sarayapa@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/12 14:02:07 by sarayapa          #+#    #+#              #
-#    Updated: 2026/02/20 13:46:49 by sarayapa         ###   ########.fr        #
+#    Updated: 2026/03/03 22:20:20 by sarayapa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,14 +18,14 @@ CFLAGS = -Wall -Wextra -Werror
 
 LIBMLX	:= ./MLX42
 
-FILES = main.c
+FILES = main.c fractol_utils.c
 
 SRCS = src/
 BUILD = build/
 INC = -Iinclude -Ilibft/include -I$(LIBMLX) -IMLX42/include/MLX42
-LIB = $(LIBMLX)/build/libmlx42.a -ldl -lglfw -pthread -lm
+LIB = $(LIBMLX)/build/libmlx42.a -ldl -pthread -lm -lglfw
 
-	
+
 SRCS_O = $(addprefix $(BUILD), $(FILES:.c=.o))
 
 GREEN = \033[1;32m
@@ -43,8 +43,8 @@ libmlx:
 libft:
 	@echo "$(YELLOW)Building libft...$(RESET)"
 	@make --no-print-directory -C libft
-	
-$(BUILD): 
+
+$(BUILD):
 	@mkdir -p $(BUILD)
 
 $(BUILD)%.o: $(SRCS)%.c

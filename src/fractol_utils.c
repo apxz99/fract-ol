@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   fractol_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sarayapa <sarayapa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/31 03:34:27 by sarayapa          #+#    #+#             */
-/*   Updated: 2026/03/03 22:08:35 by sarayapa         ###   ########.fr       */
+/*   Created: 2026/03/03 22:07:59 by sarayapa          #+#    #+#             */
+/*   Updated: 2026/03/03 22:19:38 by sarayapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "fractol.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	parse_args(int ac, char **av, t_fractal *f)
 {
-	size_t	i;
-
-	i = 0;
-	if (!s1 || !s2)
-		return (0);
-	while ((s1[i] == s2[i]) && n > 0)
+	if(ac == 2 && !ft_strncmp(av[1], "mandelbrot", 11))
+		f->type = mandelbrot;
+	else if(ac == 4 && !ft_strncmp(av[1], "julia", 6))
+		f->type = julia;
+	else
 	{
-		i++;
-		n--;
+		ft_putstr_fd("Usage :\n\t./fractol mandelbrot\n\t./fractol julia <value_1> <value_2>", 2);
+		exit(1);
 	}
-	if (n == 0)
-		return (0);
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }

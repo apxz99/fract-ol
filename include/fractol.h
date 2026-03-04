@@ -6,7 +6,7 @@
 /*   By: sarayapa <sarayapa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 14:07:39 by sarayapa          #+#    #+#             */
-/*   Updated: 2026/02/20 14:05:17 by sarayapa         ###   ########.fr       */
+/*   Updated: 2026/03/03 22:19:55 by sarayapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@
 # define DEFAULT_ITER 100
 # define MAX_ITER 100
 
-# define HEIGHT 720.0
-# define WIDTH 1080.0
+# define HEIGHT 360
+# define WIDTH 640
 
 # define EXIT_KEY 65307
 # define RESET_KEY MLX_KEY_R
@@ -31,7 +31,12 @@
 # define DECREASE_ITER_KEY 45
 # define COLOR_SHIFT_KEY MLX_KEY_C
 
-typedef struct s_data
+typedef enum	type
+{
+	mandelbrot, julia 
+}	t_type;
+
+typedef struct s_fractol
 {
 	mlx_t	*mlx;
 	mlx_image_t	*img;
@@ -40,11 +45,10 @@ typedef struct s_data
 	double	offset_x;
 	double	offset_y;
 
+	t_type	type;
 	int		max_iter;
-}   t_data;
+}   t_fractal;
 
-//void	put_pixel(t_data *d, int x, int y, int color);
-
-//int		mandelbrot(double cr, double ci);
+void parse_args(int ac, char **av, t_fractal *f);
 
 #endif

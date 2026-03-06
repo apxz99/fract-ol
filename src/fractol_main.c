@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   fractol_main.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sarayapa <sarayapa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 15:18:11 by sarayapa          #+#    #+#             */
-/*   Updated: 2026/03/04 22:50:57 by sarayapa         ###   ########.fr       */
+/*   Updated: 2026/03/06 20:22:37 by sarayapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,20 @@ int	main(int ac, char **av)
 	render(&f);
 	mlx_loop(f.mlx);
 	return (0);
+}
+
+void	init_fractol(t_fractol *f)
+{
+	f->mlx = mlx_init(WIDTH, HEIGHT, "FRACT-OL", true);
+	if (!f->mlx)
+		exit (EXIT_FAILURE);
+	f->img = mlx_new_image(f->mlx, WIDTH, HEIGHT);
+	if (!f->img)
+		exit (EXIT_FAILURE);
+	mlx_key_hook(f->mlx, key_hook, f);
+	mlx_scroll_hook(f->mlx, scroll_hook, f);
+	mlx_close_hook(f->mlx, close_hook, f);
+	mlx_image_to_window(f->mlx, f->img, 0, 0);
 }
 
 int	mandelbrot(double cr, double ci)

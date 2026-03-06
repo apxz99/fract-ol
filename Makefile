@@ -6,7 +6,7 @@
 #    By: sarayapa <sarayapa@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/12 14:02:07 by sarayapa          #+#    #+#              #
-#    Updated: 2026/03/04 22:31:18 by sarayapa         ###   ########.fr        #
+#    Updated: 2026/03/06 16:34:12 by sarayapa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 LIBMLX	:= ./MLX42
 
-FILES = main.c fractol_utils.c fractol_hooks.c
+FILES = fractol_main.c fractol_parser.c fractol_utils.c fractol_hook.c 
 
 SRCS = src/
 BUILD = build/

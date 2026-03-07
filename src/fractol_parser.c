@@ -6,7 +6,7 @@
 /*   By: sarayapa <sarayapa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 16:12:03 by sarayapa          #+#    #+#             */
-/*   Updated: 2026/03/06 20:02:43 by sarayapa         ###   ########.fr       */
+/*   Updated: 2026/03/07 14:14:19 by sarayapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void	parse_args(int ac, char **av, t_fractol *f)
 	{
 		f->type = manda;
 		f->scale = 1.5;
-		f->offset_x = -0.5;
+		f->offset_x = -0.55;
 		f->offset_y = 0;
 	}
-	else if (ac == 4 && !ft_strncmp(av[1], "julia", 6))
+	else if ((ac <= 4) && !ft_strncmp(av[1], "julia", 6))
 	{
 		if (is_float_str(av[2]) && is_float_str(av[3]))
 		{
@@ -29,7 +29,7 @@ void	parse_args(int ac, char **av, t_fractol *f)
 			f->julia_ci = ft_atof(av[3]);
 		}
 		else
-			error_exit();
+			julia_error_exit();
 		f->type = jul;
 		f->scale = 2;
 		f->offset_x = 0;
@@ -66,8 +66,18 @@ bool	is_float_str(char *str)
 
 void	error_exit(void)
 {
-	ft_putstr_fd("Usage :\n\t", 2);
-	ft_putstr_fd("./fractol mandelbrot\n\t", 2);
-	ft_putstr_fd("./fractol julia <real_value> <imaginary_value>\n", 2);
+	ft_putstr_fd("Usage :\n", 2);
+	ft_putstr_fd("\t./fractol mandelbrot\n", 2);
+	ft_putstr_fd("\t./fractol julia <real_value> <imaginary_value>\n", 2);
+	exit(1);
+}
+
+void	julia_error_exit(void)
+{
+	ft_putstr_fd("Error: Invalid Julia parameters\n", 2);
+	ft_putstr_fd("Usage:\n", 2);
+	ft_putstr_fd("\t./fractol julia <real_value> <imaginary_value>\n", 2);
+	ft_putstr_fd("Example:\n", 2);
+	ft_putstr_fd("\t./fractol julia -0.7 0.27015\n", 2);
 	exit(1);
 }

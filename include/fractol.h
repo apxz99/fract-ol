@@ -6,7 +6,7 @@
 /*   By: sarayapa <sarayapa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 14:07:39 by sarayapa          #+#    #+#             */
-/*   Updated: 2026/03/06 20:08:27 by sarayapa         ###   ########.fr       */
+/*   Updated: 2026/03/07 14:06:07 by sarayapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 
 # define MAX_ITER 100
 
-# define HEIGHT 900
-# define WIDTH 900
+# define HEIGHT 1600
+# define WIDTH 1600
 
 typedef enum type
 {
@@ -53,5 +53,6 @@ void		scroll_hook(double xdelta, double ydelta, void *param);
 void		close_hook(void *param);
 void		error_exit(void);
 bool		is_float_str(char *str);
+void		julia_error_exit(void);
 
 #endif

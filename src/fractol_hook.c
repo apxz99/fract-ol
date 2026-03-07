@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol_hooks.c                                    :+:      :+:    :+:   */
+/*   fractol_hook.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sarayapa <sarayapa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 20:32:59 by sarayapa          #+#    #+#             */
-/*   Updated: 2026/03/04 23:26:04 by sarayapa         ###   ########.fr       */
+/*   Updated: 2026/03/07 12:52:53 by sarayapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ void	key_hook(mlx_key_data_t keydata, void *param)
 		exit(0);
 	}
 	if (keydata.key == MLX_KEY_LEFT && keydata.action == MLX_PRESS)
-		f->offset_x -= 0.1 * f->scale;
+		f->offset_x -= 0.05 * f->scale;
 	if (keydata.key == MLX_KEY_RIGHT && keydata.action == MLX_PRESS)
-		f->offset_x += 0.1 * f->scale;
+		f->offset_x += 0.05 * f->scale;
 	if (keydata.key == MLX_KEY_UP && keydata.action == MLX_PRESS)
-		f->offset_y -= 0.1 * f->scale;
+		f->offset_y -= 0.05 * f->scale;
 	if (keydata.key == MLX_KEY_DOWN && keydata.action == MLX_PRESS)
-		f->offset_y += 0.1 * f->scale;
+		f->offset_y += 0.05 * f->scale;
 	render(f);
 }
 

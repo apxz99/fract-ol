@@ -65,6 +65,9 @@ List references such as:
 - https://w.wiki/JAKr
 - https://www.facebook.com/share/p/1DysnSwesi/
 - https://github.com/codam-coding-college/MLX42/tree/master/docs
+- https://mandel.gart.nz/#/
+- https://jmaio.github.io/mandelbrot-maps/#/m@0.2361652,0.5633767,11.2,0.2/j@0.4364131,-0.6468786,4,2.12
+- https://youtu.be/7MotVcGvFMg?si=lL01AY-aPZe9Doi8
 
 
 ### AI Usage

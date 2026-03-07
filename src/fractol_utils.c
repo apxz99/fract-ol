@@ -6,7 +6,7 @@
 /*   By: sarayapa <sarayapa@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/03 22:07:59 by sarayapa          #+#    #+#             */
-/*   Updated: 2026/03/06 20:12:28 by sarayapa         ###   ########.fr       */
+/*   Updated: 2026/03/07 13:46:10 by sarayapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ double	ft_atof(const char *str)
 
 int	get_color(int i)
 {
-	if (i == MAX_ITER || i == 1)
+	if (i == MAX_ITER)
 		return (0x000000FF);
-	return (i * 0x0808F2FF);
+	return (i * 0x0F0AF4FF);
 }
